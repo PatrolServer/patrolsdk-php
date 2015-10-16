@@ -40,3 +40,5 @@ Webhook::listen('webhook.scan_finished', function ($event) {
 
 ## Documentation
 See [https://api.patrolserver.com/](https://api.patrolserver.com/) for the latest documentation.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-65036233-1/PatrolServer/patrolsdk-php?pixel)](https://github.com/igrigorik/ga-beacon)
