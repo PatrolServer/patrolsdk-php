@@ -1,0 +1,33 @@
+{
+    name: "patrolserver/patrolsdk-php",
+    description: "PatrolServer PHP Library",
+    keywords: [
+        "patrolserver",
+        "security monitor",
+        "outdated software scanner",
+        "api"
+    ],
+    homepage: "https://patrolserver.com/",
+    license: "MIT",
+    authors: [
+        {
+            name: "PatrolServer",
+            homepage: "https://github.com/PatrolServer/patrolsdk-php/graphs/contributors"
+        }
+    ],
+    require: {
+        php: ">=5.3.3",
+    },
+    require-dev: {
+    },
+    autoload: {
+        psr-4: {
+            PatrolSdk\: "patrol-sdk/lib/"
+        }
+    },
+    extra: {
+        branch-alias: {
+            dev-master: "1.0-dev"
+        }
+    }
+}
