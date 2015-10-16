@@ -18,8 +18,7 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "PatrolSdk\\": "lib/"
