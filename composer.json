@@ -18,11 +18,10 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "require-dev": {
-    },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "PatrolSdk\\": "patrol-sdk/lib/"
+            "PatrolSdk\\": "lib/"
         }
     },
     "extra": {

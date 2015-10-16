@@ -1,7 +1,7 @@
 <?php
 
 // Include the PatrolServer PHP SDK
-require_once "../patrol-sdk/init.php";
+require_once "../init.php";
 
 // Usage of the SDK objects
 use PatrolSdk\Patrol;
