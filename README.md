@@ -1,5 +1,5 @@
 # PatrolServer PHP SDK
-The PHP SDK provides a stable interface to implement PatrolServer functionality in your own applications. You can signup for a PatrolServer account at [https://patrolserver.com](https://patrolserver.com).
+The PHP SDK provides a stable interface to implement PatrolServer functionality in your own applications. You can signup for a PatrolServer account at [https://patrolserver.com](https://patrolserver.com). For a more in-depth explanation on how webhooks work, check out the blog post covering the introduction of PatrolServer's webhooks at [https://blog.patrolserver.com/2015/10/15/introducting-webhooks/](https://blog.patrolserver.com/2015/10/15/introducting-webhooks/).
 
 ## Requirements
 PHP 5.3.3 and later.
