@@ -25,6 +25,7 @@ If you do not want to install the SDK with Composer, you can download the latest
 
 ## Usage
 ```php
+// Use the Singleton or create a separate PatrolSdk\Patrol object
 use PatrolSdk\Singleton as Patrol;
 
 Patrol::setApiKey('194786f61ea856b6468c0c41fa0d4bdb');
