@@ -36,8 +36,8 @@ class Log {
      *
      * @param string $data
      */
-    public static function info($data) {
-        if (!Patrol::$enableLog) {
+    public static function info(Patrol $patrol, $data) {
+        if (!$patrol->enableLog) {
             return;
         }
 

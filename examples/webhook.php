@@ -4,9 +4,7 @@
 require_once "../init.php";
 
 // Usage of the SDK objects
-use PatrolSdk\Patrol;
-use PatrolSdk\Webhook;
-use PatrolSdk\Log;
+use PatrolSdk\Singleton as Patrol;
 
 /*
  * The log part is just an example, the SDK provides a testing environment where you can log data.
@@ -15,7 +13,7 @@ use PatrolSdk\Log;
 Log::setPath(dirname(__FILE__) . '/log.txt');
 
 // Logging is not enabled by default, we'll enable the Log interface manually.
-Patrol::$enableLog = true;
+Patrol::enableLog();
 
 /*
  * When the SDK retrieves a webhook event, it only contains an event_id and a webhook_id. It then fetches
@@ -31,9 +29,9 @@ Patrol::setApiSecret('D6360a34e730ae96d74f545a286bfb01468cd01bb191eed49d9e421c2e
  * This event gets triggered when you hit the "Test Webhook" button in the API page.
  * It's a great way to check if your webhook is working. If this logs, it works!
  */
-Webhook::listen('webhook.test', function ($event) {
-    Log::info('webhook.test');
-    Log::info($event);
+Patrol::webhook('webhook.test', function ($event) {
+    Patrol::log('webhook.test');
+    Patrol::log($event);
 });
 
 /*
@@ -44,9 +42,9 @@ Webhook::listen('webhook.test', function ($event) {
  *
  * An example of the Event data can be found here: https://api.patrolserver.com/#webhooks-integrations
  */
-Webhook::listen('webhook.new_server_issues', function ($event) {
-    Log::info('webhook.new_server_issues');
-    Log::info($event);
+Patrol::webhook('webhook.new_server_issues', function ($event) {
+    Patrol::log('webhook.new_server_issues');
+    Patrol::log($event);
 });
 
 /*
@@ -54,9 +52,9 @@ Webhook::listen('webhook.new_server_issues', function ($event) {
  *
  * When a scan is started, both manually or automatically, this webhook will inform your application.
  */
-Webhook::listen('webhook.scan_started', function ($event) {
-    Log::info('webhook.scan_started');
-    Log::info($event);
+Patrol::webhook('webhook.scan_started', function ($event) {
+    Patrol::log('webhook.scan_started');
+    Patrol::log($event);
 });
 
 /*
@@ -64,7 +62,7 @@ Webhook::listen('webhook.scan_started', function ($event) {
  *
  * When we finished scanning your server, both manually or automatically, this webhook will inform your application.
  */
-Webhook::listen('webhook.scan_finished', function ($event) {
-    Log::info('webhook.scan_finished');
-    Log::info($event);
+Patrol::webhook('webhook.scan_finished', function ($event) {
+    Patrol::log('webhook.scan_finished');
+    Patrol::log($event);
 });
