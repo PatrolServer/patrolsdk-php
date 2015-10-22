@@ -25,16 +25,22 @@ If you do not want to install the SDK with Composer, you can download the latest
 
 ## Usage
 ```php
-use PatrolSdk\Patrol;
-use PatrolSdk\Webhook;
+// Use the Singleton or create a separate PatrolSdk\Patrol object
+use PatrolSdk\Singleton as Patrol;
 
 Patrol::setApiKey('194786f61ea856b6468c0c41fa0d4bdb');
 Patrol::setApiSecret('D6360a34e730ae96d74f545a286bfb01468cd01bb191eed49d9e421c2e56f958');
 
-Webhook::listen('webhook.scan_finished', function ($event) {
+Patrol::webhook('webhook.scan_finished', function ($event) {
 	$server_id = $event['server_id'];
 
-	// You can get the Server object with https://api.patrolserver.com/servers/{id}
+	if ($server_id) {
+		// Get the Server object from the server_id
+		$server = Patrol::server($server_id);
+		
+		// Get the installed software
+		$software = $server->allSoftware();
+	}
 });
 ```
 
