@@ -34,7 +34,13 @@ Patrol::setApiSecret('D6360a34e730ae96d74f545a286bfb01468cd01bb191eed49d9e421c2e
 Patrol::webhook('webhook.scan_finished', function ($event) {
 	$server_id = $event['server_id'];
 
-	// You can get the Server object with https://api.patrolserver.com/servers/{id}
+	if ($server_id) {
+		// Get the Server object from the server_id
+		$server = Patrol::server($server_id);
+		
+		// Get the installed software
+		$software = $server->allSoftware();
+	}
 });
 ```
 
