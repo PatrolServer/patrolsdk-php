@@ -31,7 +31,7 @@ use PatrolSdk\Webhook;
 Patrol::setApiKey('194786f61ea856b6468c0c41fa0d4bdb');
 Patrol::setApiSecret('D6360a34e730ae96d74f545a286bfb01468cd01bb191eed49d9e421c2e56f958');
 
-Webhook::listen('webhook.scan_finished', function ($event) {
+Patrol::webhook('webhook.scan_finished', function ($event) {
 	$server_id = $event['server_id'];
 
 	// You can get the Server object with https://api.patrolserver.com/servers/{id}
