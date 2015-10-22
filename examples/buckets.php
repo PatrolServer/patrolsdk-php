@@ -8,7 +8,6 @@ use PatrolSdk\Singleton as Patrol;
 
 Patrol::setApiKey('ed94f55159c0710972d7da4b97766767');
 Patrol::setApiSecret('92df264e875b0cad2f70906341017efa29eb1c5f35c59e3e380d943c6798f45b');
-Patrol::setApiBaseUrl('http://localhost:8000/extern/api');
 
 /*
  * Buckets
